@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'reservations/index'
   get 'reservations/show'
   get 'reservations/update'
