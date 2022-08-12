@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'reservations/index'
+  get 'reservations/show'
+  get 'reservations/update'
+  get 'reservations/delete'
   get 'doctors/index'
   get 'doctors/show'
   get 'doctors/update'
