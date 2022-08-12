@@ -4,7 +4,7 @@ class CreateDoctors < ActiveRecord::Migration[7.0]
        t.string :name
        t.string :speciality
        t.string  :city
-       t.belongs_to :user, index: true, foreign_key: true
+
       t.timestamps
     end
   end
