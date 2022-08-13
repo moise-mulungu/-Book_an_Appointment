@@ -3,12 +3,9 @@ class DoctorsController < ApplicationController
     @doctors = Doctor.all
   end
 
-  def show
-  end
+  def show; end
 
-  def update
-  end
+  def update; end
 
-  def delete
-  end
+  def delete; end
 end

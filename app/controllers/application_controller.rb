@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-    before_action :update_allowed_parameters, if: :devise_controller?
+  before_action :update_allowed_parameters, if: :devise_controller?
 
   def update_allowed_parameters
     devise_parameter_sanitizer.permit(:sign_up) do |u|
@@ -16,5 +16,4 @@ class ApplicationController < ActionController::Base
       redirect_to splashs_index_path
     end
   end
-    
 end

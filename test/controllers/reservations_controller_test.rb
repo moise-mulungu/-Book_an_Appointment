@@ -1,22 +1,22 @@
-require "test_helper"
+require 'test_helper'
 
 class ReservationsControllerTest < ActionDispatch::IntegrationTest
-  test "should get index" do
+  test 'should get index' do
     get reservations_index_url
     assert_response :success
   end
 
-  test "should get show" do
+  test 'should get show' do
     get reservations_show_url
     assert_response :success
   end
 
-  test "should get update" do
+  test 'should get update' do
     get reservations_update_url
     assert_response :success
   end
 
-  test "should get delete" do
+  test 'should get delete' do
     get reservations_delete_url
     assert_response :success
   end

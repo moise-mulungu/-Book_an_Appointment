@@ -1,13 +1,9 @@
 class ReservationsController < ApplicationController
-  def index
-  end
+  def index; end
 
-  def show
-  end
+  def show; end
 
-  def update
-  end
+  def update; end
 
-  def delete
-  end
+  def delete; end
 end
