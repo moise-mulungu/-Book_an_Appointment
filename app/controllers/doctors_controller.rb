@@ -4,11 +4,20 @@ class DoctorsController < ApplicationController
    def index
     @doctor=Doctor.all
    end
-
+   
   def new
     @doctor=Doctor.new
   end
- 
+
+  def create
+    @doctor=Doctor.new(Doctor_params)
+    if @doctor.save
+      redirect_to doctor_path(@doctor)
+    else
+      render 'new'
+    end
+  end
+
  
   
 end
