@@ -4,5 +4,10 @@ class ReservationsController < ApplicationController
     @reservation=Reservation.all
    end
 
+   def show
+   end
+
+   def edit
+   end
 
 end
