@@ -23,16 +23,32 @@ class DoctorsController < ApplicationController
   end
 
   def update 
-  
-    if @doctor.update( Doctor_params)
+    if @doctor.update( doctor_params)
       redirect_to doctors_path
-    else
-      render 'edit'
-    end
+      else
+        render 'edit'
+      end
   end
 
   def show 
   
   end 
+  
+  def destroy 
+    @doctor =Doctor.find(params[:id])
+    @doctor.destroy
+    redirect_to doctors_path
+  end
+
+  def set_doctor 
+    @doctor= Doctor.find(params[:id])
+  end
+  private 
+  def doctor_params
+     params.require(:doctor).permit(:name, :speciality, :user_id)
+  end
+
+ 
+  
 
 end
