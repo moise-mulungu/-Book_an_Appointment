@@ -18,4 +18,20 @@ class ReservationsController < ApplicationController
     end
    end
   
+   def create
+    @reservation=Reservation.new(reservation_params)
+    if @reservation.save 
+     redirect_to reservations_path
+  end
+ 
+ 
+ def set_reservation
+   @reservation=Reservation.find(params[:id])
+ end
+ 
+  private
+  def reservation_params
+   params.require(:reservation).permit(:datetime, :user_id, :doctor_id)
+  end
+ 
 end
