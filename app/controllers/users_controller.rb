@@ -18,7 +18,15 @@ class UsersController < ApplicationController
     render 'new'
    end
   end
+  def update 
+    if @user.update( user_params)
+      redirect_to users_path, notice:'You updated successfully!'
+    else
+      render 'edit'
+    end
+  end
 
+ 
 
  
 end
