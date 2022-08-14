@@ -10,4 +10,12 @@ class ReservationsController < ApplicationController
    def edit
    end
 
+   def update
+    if @reservation.update(reservation_params)
+      redirect_to reservations_path
+    else
+      render 'edit'
+    end
+   end
+  
 end
