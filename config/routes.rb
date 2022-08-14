@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
-  get '/doctor', to:'doctors#index'
-  get '/doctor/details', to: 'doctors#show'
-  
-  get 'reservations', to: 'reservations#index'
-  get '/users', to: 'users#index'
+  namespace :v1, defaults: { format: :json } do
+    resources  :users ,  only: [:index, :create] do  
+       resources  :doctors, only: [:index, :show, :create, :destroy]
+        resources  :reservations, only: [:index,  :create]
+    end
+  end
+
 
 
 
