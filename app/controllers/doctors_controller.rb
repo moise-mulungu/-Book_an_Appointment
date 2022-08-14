@@ -18,6 +18,21 @@ class DoctorsController < ApplicationController
     end
   end
 
+  def edit 
  
+  end
+
+  def update 
   
+    if @doctor.update( Doctor_params)
+      redirect_to doctors_path
+    else
+      render 'edit'
+    end
+  end
+
+  def show 
+  
+  end 
+
 end
