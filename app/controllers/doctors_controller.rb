@@ -1,5 +1,5 @@
 class DoctorsController < ApplicationController
-  before_action :set_Doctor, only: [:edit, :update, :show]
+  before_action :set_doctor, only: [:edit, :update, :show]
 
   def index
     @doctor = Doctor.all
@@ -10,7 +10,8 @@ class DoctorsController < ApplicationController
   end
 
   def create
-    @doctor = Doctor.new(Doctor_params)
+    @doctor = Doctor.new(doctor_params)
+    
     if @doctor.save
       redirect_to doctor_path(@doctor)
     else

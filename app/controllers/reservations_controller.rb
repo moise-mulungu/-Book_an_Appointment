@@ -17,9 +17,18 @@ class ReservationsController < ApplicationController
       render 'edit'
     end
    end
+
+ 
+
+    def new
+      @user = current_user
+      @reservation = Reservation.new
+    end
   
    def create
     @reservation=Reservation.new(reservation_params)
+    @reservation.user= current_user
+    @reservation.doctor=   Doctor.find(params[:doctor_id])
     if @reservation.save 
      redirect_to reservations_path
   end
@@ -31,7 +40,7 @@ class ReservationsController < ApplicationController
  
   private
   def reservation_params
-   params.require(:reservation).permit(:datetime, :user_id, :doctor_id)
+   params.require(:reservation).permit(:datetime)
   end
  
 end
