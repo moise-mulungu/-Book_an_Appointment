@@ -4,6 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
   has_many :reservations
-  has_many :doctors, through: :reservations
+  has_many :doctors
   validates :name, presence: true
 end
