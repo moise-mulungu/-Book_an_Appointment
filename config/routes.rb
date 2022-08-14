@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  get '/doctor', to:'doctors#index'
+  get '/doctor/details', to: 'doctors#show'
+  
+  get 'reservations', to: 'reservations#index'
+  get '/users', to: 'users#index'
 
-  # Defines the root path route ("/")
-  root "doctors#index"
+
+
 end
