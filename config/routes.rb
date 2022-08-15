@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :users
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  namespace :v1, defaults: { format: :json } do
+    resources  :users ,  only: [:index, :create] do  
+       resources  :doctors, only: [:index, :show, :create, :destroy]
+        resources  :reservations, only: [:index,  :create]
+    end
+  end
 
-  # Defines the root path route ("/")
-  root "doctors#index"
+
+
+
 end
