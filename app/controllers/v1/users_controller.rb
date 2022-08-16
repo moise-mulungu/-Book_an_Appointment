@@ -12,6 +12,10 @@ class V1::UsersController < ApplicationController
     end
   end
 
+  def authenticate
+    render json: { error: 401, message: ' user cannot be processed !' }
+  end
+
   private
 
   def user_params
