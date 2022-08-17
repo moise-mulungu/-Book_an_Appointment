@@ -12,6 +12,16 @@ class V1::UsersController < ApplicationController
     end
   end
 
+  def authenticate
+    @user = User.where(username: params[:username])
+    if @user.length == 0
+      @user = User.create(username: params[:username])
+      render json: { status: 201, message: 'user created successfully!', content: { user: @user } }
+    else
+      render json: { status: 200, message: " user logged in !", content: { user: @user } }
+    end
+  end
+
   private
 
   def user_params
