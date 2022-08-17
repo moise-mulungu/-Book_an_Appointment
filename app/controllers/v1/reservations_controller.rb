@@ -4,20 +4,14 @@ class V1::ReservationsController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:user_id])
-    @reservation = Reservation.new(reservation_params)
-    @reservation.user_id = @user.id
-    @reservation.doctor_id = reservation_params[:doctor_id]
-    if @reservation.save
-      render json: { status: 201, message: 'Reserved successfully!', content: { reservation: @reservation } }
+    user = User.find_by(id: params[:user_id])
+	  doctor = Doctor.find_by(id: params[:doctor_id])
+	  reservation = Reservation.new(datetime: Date.parse(params[:date].to_s), user: user, doctor: doctor)
+
+    if reservation.save
+      render json : {success: "You successfully reserved #{doctor.name} on #{reservation.date}" }
     else
-      render json: { error: 401, message: ' Operation did not succeed!' }
+      render json: {failure: "Your Reservation failed. Please try again"}.to_json
     end
-  end
-
-  private
-
-  def reservation_params
-    params.permit(:datetime, :doctor_id)
   end
 end
