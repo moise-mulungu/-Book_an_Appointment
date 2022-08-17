@@ -28,5 +28,8 @@ class V1::ReservationsController < ApplicationController
     end
   end
 
+  def reservation_params
+    params.require (:reservation).permit(:datetime, :user_id, :doctor_id)
+  end
   
 end
