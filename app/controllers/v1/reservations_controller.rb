@@ -1,6 +1,12 @@
 class V1::ReservationsController < ApplicationController
   def index
-    render json: Reservation.all
+    @user = current_user
+    if @user.present?
+      @reservations = user.reserved_doctors.joins(:reservations).select('reservations.id', :name, :image, :price, 'reservations.datetime').distinct
+      render json: {reservations: @reservations}.to_json
+    else
+      render json: {error: 'You are not authorized to access this page'}.to_json
+    end
   end
 
   def create
@@ -17,7 +23,7 @@ class V1::ReservationsController < ApplicationController
 
   def destroy
     user = current-user
-    @reservations = user.reserved_doctors(:reservations).select('reservations.id', :name, :image, :price, 'reservations.datetime').distinct
+    @reservations = user.reserved_doctors.joins(:reservations).select('reservations.id', :name, :image, :price, 'reservations.datetime').distinct
     reservation = Reservation.find_by(id: params[:id])
     
     if
