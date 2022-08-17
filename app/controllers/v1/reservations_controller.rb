@@ -1,7 +1,7 @@
 class V1::ReservationsController < ApplicationController
   def index
     @reservations = User.find(params[:user_id]).reservations
-    render json: @reservations  
+    render json: @reservations
   end
 
   def create
@@ -20,7 +20,6 @@ class V1::ReservationsController < ApplicationController
     else
       render json: { error: 'You are not authorized to access this page' }.to_json
     end
- 
   end
 
   def reservation_params
