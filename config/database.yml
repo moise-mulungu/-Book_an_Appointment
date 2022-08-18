@@ -21,15 +21,13 @@ default: &default
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
-  username: ced00
-  password: ced00
+  username: moise
 
 
 development:
   <<: *default
   database: meet_d_r
-  username: ced00
-  password: ced00
+  username: moise
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -64,8 +62,7 @@ development:
 test:
   <<: *default
   database: meet_d_r_test
-  username: ced00
-  password: ced00
+  username: moise
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -90,5 +87,4 @@ test:
 production:
   <<: *default
   database: meet_doctor_back_end_production
-  username: ced00
-  password: ced00
+  username: moise

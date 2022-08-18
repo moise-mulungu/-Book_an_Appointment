@@ -1,6 +1,7 @@
 class V1::ReservationsController < ApplicationController
   def index
-    render json: Reservation.all
+    @reservations = User.find(params[:user_id]).reservations
+    render json: @reservations
   end
 
   def create
