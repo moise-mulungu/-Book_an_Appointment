@@ -1,28 +1,25 @@
-class V1::ReservationsController < ApplicationController
+class  V1::ReservationsController < ApplicationController
   def index
     @reservations = User.find(params[:user_id]).reservations
     render json: @reservations
+
   end
 
   def create
-    @reservation = User.find(params[:user_id]).reservations.new(reservation_params)
+    @user = User.find(params[:user_id])
+    @reservation = Reservation.new(reservation_params)
+    @reservation.user_id = @user.id
+    @reservation.doctor_id = reservation_params[:doctor_id]
     if @reservation.save
-      render json: @reservation
+      render json: { status: 201, message: 'Reserved successfully!', content: { reservation: @reservation } }
     else
-      render json: { error: 'You are not authorized to access this page' }.to_json
+      render json: { error: 401, message: ' Operation did not succeed!' }
     end
   end
 
-  def destroy
-    @reservation = User.find(params[:user_id]).reservations.find(params[:id])
-    if @reservation.destroy
-      render json: { success: 'You successfully deleted your reservation' }.to_json
-    else
-      render json: { error: 'You are not authorized to access this page' }.to_json
-    end
-  end
+  private
 
   def reservation_params
-    params.require(:reservation).permit(:datetime, :user_id, :doctor_id)
+    params.permit(:datetime, :doctor_id)
   end
 end
