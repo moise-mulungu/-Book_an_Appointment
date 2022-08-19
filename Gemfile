@@ -50,3 +50,4 @@ group :development do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
+gem 'ffi'

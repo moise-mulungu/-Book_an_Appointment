@@ -20,5 +20,5 @@ class V1::ReservationsController < ApplicationController
 
   def reservation_params
     params.permit(:datetime, :doctor_id)
-  end
+   end
 end
