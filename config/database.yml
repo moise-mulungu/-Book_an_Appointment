@@ -21,8 +21,7 @@ default: &default
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
-  username: postgres
-  password: Bahadur@123
+  username: moise
 
 
 development:
@@ -63,6 +62,7 @@ development:
 test:
   <<: *default
   database: meet_d_r_test
+  username:  moise
 
 
 # As with config/credentials.yml, you never want to store sensitive information,
@@ -88,4 +88,5 @@ test:
 production:
   <<: *default
   database: meet_doctor_back_end_production
+  username:  moise
 
