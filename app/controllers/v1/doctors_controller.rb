@@ -26,6 +26,6 @@ class V1::DoctorsController < ApplicationController
   private
 
   def doctor_params
-    params.permit(:name, :speciality)
+    params.permit(:name, :speciality, :bill, :image, :location, :email)
   end
 end
