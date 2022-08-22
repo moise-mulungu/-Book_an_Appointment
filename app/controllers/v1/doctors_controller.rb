@@ -1,6 +1,7 @@
 class V1::DoctorsController < ApplicationController
   def index
-    render json: Doctor.all
+    @doctors = Doctor.where(user_id: params[:user_id])
+    render json: @doctors
   end
 
   def create
@@ -21,6 +22,10 @@ class V1::DoctorsController < ApplicationController
     else
       render json: { error: 401, message: ' Operation did not succeed!' }
     end
+  end
+
+  def doctors_list
+    render json: Doctor.all
   end
 
   private
