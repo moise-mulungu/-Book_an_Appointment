@@ -18,7 +18,7 @@ class V1::DoctorsController < ApplicationController
   def destroy
     @doctor = Doctor.find(params[:id])
     if @doctor.destroy
-      render json: { status: 201, message: 'doctor has deleted successfully!', content: { doctor: @doctor } }
+      render json: { status: 201, message: 'doctor has been deleted successfully!', content: { doctor: @doctor } }
     else
       render json: { error: 401, message: ' Operation did not succeed!' }
     end
