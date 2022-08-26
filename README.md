@@ -1,80 +1,60 @@
-# Meet_Doctor
+![](https://img.shields.io/badge/Microverse-blueviolet)
+# Meet Doctor
 
-## Built With
+# API Documentation
+Here is a link to the API documentation: http://127.0.0.1:3000/api-docs/index.html
 
-- Ruby on Rails
-- PostgreSQL
+# Built with
+- React.js
+- Redux
 
-## Getting Started
+## Live Demo
+COMING SOON...
+
+## installation
 
 To get a local copy up and running follow these simple example steps.
 
-Checkout our database diagram ![here](doctor_uml.png)
+- clone the repository by running
+  ``` https://github.com/moise-mulungu/meet_doctor_back_end.git ```
+- navigate to the folder
+  ``` cd <DIRECTORY> ```
+- Install packages
+  ``` npm i ```
+- Run the app
+  ``` rails s ```
 
-### Prerequisites
+# Authors
 
-- [Ruby](https://www.ruby-lang.org/en/)
-- [Rails](https://gorails.com/)
-
-### Setup
-
-- Make sure you have Ruby on Rails set up properly on your computer
-- Clone or download this repo on your machine
-- Enter project directory
-
-### Development Database
-
-```sh
-# Create user
-sudo -u postgres createuser -e <user> -s
-# Load the schema
-rake db:create
-# Create database Migration
-rails db:migrate
-```
-
-### Install
-
-```sh
-bundle install
-```
-
-### Run
-
-```sh
-rails s
-```
-
-### Test
-
-```sh
-rspec
-```
-
-## Authors
-
-👤 **Cédric Kossi**
+👤 **Cedric Kossi**
 
 - GitHub: [@kosher9](https://github.com/kosher9)
 - Twitter: [@kosherus](https://twitter.com/kosherus)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/lionel-c%C3%A9dric-kossi-323042172)
+- LinkedIn: [Lionel Cedric KOSSI](https://linkedin.com/in/lionel-c%C3%A9dric-kossi-323042172)
 
-## 🤝 Contributing
+👤 **Samiullah Bahadur**
+- GitHub: [@bahadur](https://github.com/samiullahbahadur)
+- Twitter: [@bahadur](https://twitter.com/bushera_mestofa)
+- LinkedIn: [@bahadur](https://www.linkedin.com/in/samiullah-bahadur/)
+
+👤 **Moïse Mulungu**
+- GitHub: [@Moïse Mulungu](https://github.com/moise-mulungu)
+- Twitter: [@Moïse Mulungu](https://twitter.com/moise_mulungu)
+- LinkedIn: [Moïse (Musa) Mulungu](https://www.linkedin.com/in/moisemulungu/)
+
+## :handshake: Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
-
 ## Show your support
 
-Give a ⭐️ if you like this project!
+Give a :star:️ if you like this project!
 
 ## Acknowledgments
+Design inspired by [Murat Korkmaz](https://www.behance.net/muratk), design: [Vespa](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign)
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- Microverse offered guidance on how to make the project more professional
 
 ## 📝 License
 
-This project is [MIT](./MIT.md) licensed.
+This project is [MIT](./LICENSE) licensed.
