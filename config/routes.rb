@@ -9,5 +9,7 @@ Rails.application.routes.draw do
   end
 
   get 'login', to: 'v1/users#authenticate'
+  #  List of all doctors
+  get 'v1/doctors', to: 'v1/doctors#doctors_list'
 
 end

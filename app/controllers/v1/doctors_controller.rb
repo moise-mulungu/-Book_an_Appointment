@@ -1,6 +1,7 @@
 class V1::DoctorsController < ApplicationController
   def index
-    render json: Doctor.all
+    @doctors = Doctor.where(user_id: params[:user_id])
+    render json: @doctors
   end
 
   def create
@@ -17,10 +18,14 @@ class V1::DoctorsController < ApplicationController
   def destroy
     @doctor = Doctor.find(params[:id])
     if @doctor.destroy
-      render json: { status: 201, message: 'doctor has deleted successfully!', content: { doctor: @doctor } }
+      render json: { status: 201, message: 'doctor has been deleted successfully!', content: { doctor: @doctor } }
     else
       render json: { error: 401, message: ' Operation did not succeed!' }
     end
+  end
+
+  def doctors_list
+    render json: Doctor.all
   end
 
   private
