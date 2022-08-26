@@ -1,4 +1,10 @@
-# Meet_Doctor
+# Meet Doctor (Back-end)
+
+# Live demo
+(COMING SOON...)
+
+# Preview
+(COMING SOON...)
 
 ## Built With
 
@@ -8,8 +14,6 @@
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
-
-Checkout our database diagram ![here](doctor_uml.png)
 
 ### Prerequisites
 
@@ -26,10 +30,12 @@ Checkout our database diagram ![here](doctor_uml.png)
 
 ```sh
 # Create user
-sudo -u postgres createuser -e <user> -s
+sudo -u postgres createuser -e ced00 -s
 # Load the schema
+rails db:schema:load
+# Create the database
 rake db:create
-# Create database Migration
+# Run database Migration
 rails db:migrate
 ```
 
@@ -39,7 +45,7 @@ rails db:migrate
 bundle install
 ```
 
-### Run
+### Run server
 
 ```sh
 rails s
@@ -71,10 +77,8 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- Design inspired by [Murat Korkmaz](https://www.behance.net/muratk)
 
 ## 📝 License
 
-This project is [MIT](./MIT.md) licensed.
+This project is [MIT](./LICENSE) licensed.
