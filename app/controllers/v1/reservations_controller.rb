@@ -14,7 +14,7 @@ class V1::ReservationsController < ApplicationController
 
     if @reservation.save
       # reservation = Reservation.find(reservation.id)
-      render json: { status: 201, message: 'Reserved successfully!', content: { reservation:  @reservation} }
+      render json: { status: 201, message: 'Reserved successfully!', content: { reservation: @reservation } }
     else
       render json: { error: 401, message: ' Operation did not succeed!' }
     end
