@@ -1,0 +1,199 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/v1/doctors":
+    get:
+      summary: Get all doctors
+      tags:
+      - Doctors
+      responses:
+        '200':
+          description: doctors found
+    post:
+      summary: Create a doctor
+      tags:
+      - Doctors
+      parameters: []
+      responses:
+        '201':
+          description: doctor created
+        '422':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                specialty:
+                  type: string
+              required:
+              - name
+              - specialty
+  "/v1/doctors/{id}":
+    get:
+      summary: Get a doctor
+      tags:
+      - Doctors
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: doctor found
+        '404':
+          description: doctor not found
+    put:
+      summary: Update a doctor
+      tags:
+      - Doctors
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: doctor updated
+        '422':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                specialty:
+                  type: string
+              required:
+              - name
+              - specialty
+    delete:
+      summary: Delete a doctor
+      tags:
+      - Doctors
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: doctor deleted
+  v1/user/reservations:
+    get:
+      summary: Get all reservations
+      tags:
+      - Reservations
+      parameters:
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: reservations found
+        '404':
+          description: reservations not found
+    post:
+      summary: Create a reservation
+      tags:
+      - Reservations
+      parameters:
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: reservation created
+        '422':
+          description: invalid request
+  "/v1/users":
+    get:
+      summary: Get all users
+      tags:
+      - Users
+      responses:
+        '200':
+          description: users found
+    post:
+      summary: Create a user
+      tags:
+      - Users
+      parameters: []
+      responses:
+        '201':
+          description: user created
+        '422':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+              required:
+              - username
+  "/v1/users/{id}":
+    get:
+      summary: Get a user
+      tags:
+      - Users
+      parameters:
+      - username: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: user found
+        '404':
+          description: user not found
+    put:
+      summary: Update a user
+      tags:
+      - Users
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: user updated
+        '404':
+          description: user not found
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+              required:
+              - username
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com
