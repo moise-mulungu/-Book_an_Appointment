@@ -48,7 +48,6 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'rswag-specs'
 end
-end
 
 group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
