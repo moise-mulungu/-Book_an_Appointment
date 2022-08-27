@@ -23,7 +23,7 @@ Kanban [Link](https://github.com/users/moise-mulungu/projects/6/views/1)
 - Redux
 
 ## Live Demo
-COMING SOON...
+[live](https://6309e2db2de66e56abe74c73--meet-a-doctor.netlify.app/login)
 
 ## installation
 
