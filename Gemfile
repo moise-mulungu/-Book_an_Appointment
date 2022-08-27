@@ -11,7 +11,8 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 gem 'pg', '~> 1.1'
 
 # rswag
-gem 'rswag'
+gem 'rswag-api'
+gem 'rswag-ui'
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
@@ -44,6 +45,9 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'rspec-rails', '~> 5.1.2'
+  gem 'rspec-rails'
+  gem 'rswag-specs'
+end
 end
 
 group :development do
