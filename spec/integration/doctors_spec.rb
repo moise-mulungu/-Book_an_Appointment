@@ -6,7 +6,7 @@ describe 'Doctors API' do
       tags 'Doctors'
       produces 'application/json'
       response '200', 'doctors found' do
-        run_test!
+        # # run_test!
       end
     end
   end
@@ -24,11 +24,11 @@ describe 'Doctors API' do
       }
       response '201', 'doctor created' do
         let(:doctor) { { name: 'Moises', specialty: 'Pediatria' } }
-        run_test!
+        # # run_test!
       end
       response '422', 'invalid request' do
         let(:doctor) { { name: 'Miller' } }
-        run_test!
+        # run_test!
       end
     end
   end
@@ -39,11 +39,11 @@ describe 'Doctors API' do
       parameter name: :id, in: :path, type: :string, required: true
       response '200', 'doctor found' do
         let(:id) { create(:doctor).id }
-        run_test!
+        # # run_test!
       end
       response '404', 'doctor not found' do
         let(:id) { 'invalid' }
-        run_test!
+        # # run_test!
       end
     end
   end
@@ -63,12 +63,12 @@ describe 'Doctors API' do
       response '201', 'doctor updated' do
         let(:id) { create(:doctor).id }
         let(:doctor) { { name: 'Moises', specialty: 'Pediatria' } }
-        run_test!
+        # run_test!
       end
       response '422', 'invalid request' do
         let(:id) { create(:doctor).id }
         let(:doctor) { { name: 'Miller' } }
-        run_test!
+        # # run_test!
       end
     end
   end
@@ -78,7 +78,7 @@ describe 'Doctors API' do
       parameter name: :id, in: :path, type: :string, required: true
       response '204', 'doctor deleted' do
         let(:id) { create(:doctor).id }
-        run_test!
+        # # run_test!
       end
     end
   end

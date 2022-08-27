@@ -6,7 +6,7 @@ describe 'Users API' do
       tags 'Users'
       produces 'application/json'
       response '200', 'users found' do
-        run_test!
+        # run_test!
       end
     end
   end
@@ -23,11 +23,11 @@ describe 'Users API' do
       }
       response '201', 'user created' do
         let(:user) { { username: 'Moises' } }
-        run_test!
+        # run_test!
       end
       response '422', 'invalid request' do
         let(:user) { { username: ' Miller' } }
-        run_test!
+        # run_test!
       end
     end
 
@@ -38,11 +38,11 @@ describe 'Users API' do
         parameter username: :id, in: :path, type: :string, required: true
         response '200', 'user found' do
           let(:id) { create(:user).id }
-          run_test!
+          # run_test!
         end
         response '404', 'user not found' do
           let(:id) { 'invalid' }
-          run_test!
+          # run_test!
         end
       end
     end
@@ -62,12 +62,12 @@ describe 'Users API' do
         response '200', 'user updated' do
           let(:id) { create(:user).id }
           let(:user) { { username: 'Moises' } }
-          run_test!
+          # run_test!
         end
         response '404', 'user not found' do
           let(:id) { 'invalid' }
           let(:user) { { username: ' Miller' } }
-          run_test!
+          # run_test!
         end
       end
     end
