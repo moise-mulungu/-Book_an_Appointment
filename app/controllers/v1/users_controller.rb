@@ -18,7 +18,7 @@ class V1::UsersController < ApplicationController
       @user = User.create(username: params[:username])
       render json: { status: 201, message: 'user created successfully!', content: { user: @user } }
     else
-      render json: { status: 200, message: ' user logged in !', content: { user: @user } }
+      render json: { status: 200, message: ' user logged in !', content: { user: @user[0] } }
     end
   end
 
