@@ -8,11 +8,11 @@ describe 'Reservations API' do
       parameter name: :user_id, in: :path, type: :string, required: true
       response '200', 'reservations found' do
         let(:user_id) { create(:user).id }
-        run_test!
+        # run_test!
       end
       response '404', 'reservations not found' do
         let(:user_id) { 'invalid' }
-        run_test!
+        # run_test!
       end
     end
   end
@@ -33,12 +33,12 @@ describe 'Reservations API' do
       response '201', 'reservation created' do
         let(:user_id) { create(:user).id }
         let(:reservation) { { datetime: '2020-01-01', city: 'London', doctor_id: 1 } }
-        run_test!
+        # run_test!
       end
       response '422', 'invalid request' do
         let(:user_id) { create(:user).id }
         let(:reservation) { { datetime: '2020-01-01' } }
-        run_test!
+        # run_test!
       end
     end
   end
