@@ -5,3 +5,6 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+ced = User.create(username: "bla")
+doc = Doctor.create(name: "Doc", speciality: "Orthi", bill: "1000", image: "Love", location: "Togo", email: "Email@gmail.com", user: ced)
+reservation = Reservation.create(datetime: "2022-09-22", city: 'Lome', doctor: doc, user: ced)
