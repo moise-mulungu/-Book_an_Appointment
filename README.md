@@ -3,7 +3,7 @@
 This application is based booking an appointment with prominent Physicians around the world, you need just to login then book a reservation, after that you can log out or check all your reservations.
 
 # API Documentation
-[API documentation](http://127.0.0.1:3000/api-docs/index.html)
+[API documentation](https://fierce-hollows-17198.herokuapp.com/api-docs/index.html)
 
 For the Front-end [link](https://github.com/moise-mulungu/meet_doctor_front_end)
 
@@ -16,9 +16,6 @@ Kanban [Link](https://github.com/users/moise-mulungu/projects/6/views/1)
 <img src="app/screenshot_20220827_091442.png" />,
 <img src= "app/screenshot_20220827_091458.png" />,
 <img src= "app/screenshot_20220827_091626.png" />
-
-[API documentation](https://fierce-hollows-17198.herokuapp.com/api-docs/index.html)
-
 
 # Built with
 - React.js
