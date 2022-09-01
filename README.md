@@ -17,7 +17,7 @@ Kanban [Link](https://github.com/users/moise-mulungu/projects/6/views/1)
 <img src= "app/screenshot_20220827_091458.png" />,
 <img src= "app/screenshot_20220827_091626.png" />
 
-[API documentation](http://127.0.0.1:3000/api-docs/index.html)
+[API documentation](https://fierce-hollows-17198.herokuapp.com/api-docs/index.html)
 
 
 # Built with
@@ -25,7 +25,7 @@ Kanban [Link](https://github.com/users/moise-mulungu/projects/6/views/1)
 - Redux
 
 ## Live Demo
-[live](https://6309e2db2de66e56abe74c73--meet-a-doctor.netlify.app/login)
+[live](https://meet-a-doctor.netlify.app/)
 
 ## installation
 
@@ -38,7 +38,14 @@ To get a local copy up and running follow these simple example steps.
 - Install packages
   ``` npm i ```
 - Run the app
-  ``` rails s ```
+```sh
+# Load the schema
+rails db:schema:load
+# Create the database
+rake db:create
+# Run database Migration
+rails db:migrate
+```
 
 # Authors
 
